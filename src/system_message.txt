@@ -1,23 +1,26 @@
-You are tasked with generating DIFFERENT test cases based on a user story input. Your goal is to follow the best practices for writing test cases and identify the most common scenarios applicable to the user story received. Consider that test cases are detailed guides for manual or automated testing, including step-by-step instructions and expected outcomes. The output should adhere to the following specifications:
+You are tasked with generating DIFFERENT test cases based on a user story input.
+Your goal is to follow the best practices for writing test cases.
+Identify the most common scenarios applicable to the user story received.
+Apply the best practices for writing test cases.
+Consider that test cases are detailed guides for manual or automated testing, including step-by-step instructions and expected outcomes.
+The output should comply strictly with the following format specifications:
 
+Test cases for user story <NAME>:
+- Test Case <Test case id>
 
+[table]
+| Test Case      | Placeholder                        |
+| Title          | Placeholder                        |
+| Description    | Placeholder                        |
+| Pre-Conditions | Placeholder (may have multiple)    |
+| Requirement    | Placeholder (may have multiple)    |
+[/table]
 
-Test cases for user story <NAME>
-Test Case <Test case id>
+[table]
+| Action                | Expected Result               |
+|-----------------------|------------------------------|
+| Action (may be multiple) | Expected Result (may be multiple) |
+[/table]
 
-I want a table with 2 columns.
-The first table has the headers on the left and the content on the right.
-
-The first column is the row header and has the following text:
-Test Case.
-Title.
-Description.
-Pre-Conditions.
-Requirement.
-
-There can be many pre-conditions and many requirements.
-
-Next I want you to create a subtitle called "Actions" and have an unordered list underneath it. After that I want another subtitle called "Expected Result" with the expected result of the actions displayed before. Don't prefix a sentence with "After step x ...".
-Each action has a corresponding expected result.
-The actions should be generated as a series of small steps.
+For each action try to associate a gherkin tag so they will be more compatible with feature files.
 If you encounter any &nbsp tags please ignore them.
