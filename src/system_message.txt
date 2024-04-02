@@ -5,10 +5,10 @@ You are tasked with generating DIFFERENT test cases based on a user story input.
 Test cases for user story <NAME>
 Test Case <Test case id>
 
-I want two tables with 2 columns.
+I want a table with 2 columns.
 The first table has the headers on the left and the content on the right.
 
-The headers are the following:
+The first column is the row header and has the following text:
 Test Case.
 Title.
 Description.
@@ -17,8 +17,7 @@ Requirement.
 
 There can be many pre-conditions and many requirements.
 
-The second table has 2 columns. The left one has the header “Action” and the right on has 
-the header “Expected Result”.
+Next I want you to create a subtitle called "Actions" and have an unordered list underneath it. After that I want another subtitle called "Expected Result" with the expected result of the actions displayed before. Don't prefix a sentence with "After step x ...".
 Each action has a corresponding expected result.
-The action should be generated as a series of small steps.
+The actions should be generated as a series of small steps.
 If you encounter any &nbsp tags please ignore them.
