@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	background: #FBE7D8;
+	color: #fff;
+  }
+  
+  .logo  {
+	margin: 0 auto;
+	width: 100px;  
+  }
+
+.logo-container {
+	text-align: center;
+}
+  
+  .container {
+	display: flex;
+	flex-direction:row;
+	align-items: stretch;
+	height: 100vh;
+	gap: 20px;
+	margin: 10px;
+  }
+  
+.text-area {
+	flex: 1;
+	/* text-size: 12px; */
+	height: 67%;
+}
+  
+.buttons-cnt{
+	display:flex;
+	flex-direction:row;
+}
+  
+.display-area {
+	flex: 1;
+	background-color: #213C45;
+	padding: 10px;
+	color: white;
+	overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+	height: 65%;
+
+}
+  
+  .gap {
+	width: 10px; /* Adjust the gap size */
+  }
+  
+  /* Typography */
+  h1 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 900;
+	font-size: 3rem;
+	text-align: center;
+	margin-top: 50px;
+	color: #213C45;
+	
+  }
+  
+  h2 {
+	color: #ffd18b;
+	text-align: center;
+  }
+  
+  p {
+	text-align:center;
+	margin-bottom: 2rem;
+  }
+  
+  /* Form Styles */
+  form {
+	margin: 50px auto;
+	text-align: center;
+	max-width: 600px;
+  }
+  
+  input[type="text"],
+  text {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+  }
+  
+  #textInput {
+	height: 100%;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    resize: vertical;
+	vertical-align: top; /* Apply vertical alignment to the text area */
+
+	width: 100%;
+	padding: 12px;
+  }
+  
+  label {
+	color: #BE601D;
+  }
+  
+  button {
+	font-family: "Roboto", sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	background-color: #213C45;
+	color: #fff;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+  }
+  
+  button:hover {
+	background-color: #BE601D;
+  }
+  
+	.input-bar {
+	  position: sticky;
+	  bottom: 0;
+	  background-color: #FBE7D8;
+	  padding: 10px;
+	  width: 100%;
+	  box-sizing: border-box;
+	  color: white;
+	  overflow: hidden;
+	}

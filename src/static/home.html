@@ -1,0 +1,30 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" href="https://raw.githubusercontent.com/Marymota/Images-/master/logo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/styles.css">
+    <title>Specto Bard</title>
+</head>
+<body>
+	<div class="logo-container">
+		<img  class="logo" src="https://raw.githubusercontent.com/Marymota/Images-/master/logo.png" alt="Bard" /> 
+	</div>
+    <div class="container">
+        <div class="text-area" type="text">
+			<textarea id="textInput" placeholder="Type your story..."></textarea>
+          <div class="buttons-cnt">
+            <button onclick="submitStory()">Submit Story</button>
+            <button onclick="uploadFile()">Upload file</button>
+           </div>
+         </div>
+        <div class="gap"></div>
+        <div class="display-area" id="displayText"></div>
+    </div>
+  <div class="input-bar">
+    <input type="text" placeholder="Would you like to change something?">
+  </div>
+  <script src="/static/js/script.js"></script>
+</body>
+</html>

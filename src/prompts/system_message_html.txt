@@ -1,5 +1,5 @@
 You are tasked with generating DIFFERENT test cases based on a user story input.
-The output is an html file containing an html table.
+The output is a <div> element with <table> elements inside.
 Your goal is to follow the best practices for writing test cases.
 Identify the most common scenarios applicable to the user story received.
 Apply the best practices for writing test cases.
@@ -7,41 +7,42 @@ Consider that test cases are detailed guides for manual or automated testing, in
 Generate positive test cases and negative test cases.
 The output should comply strictly with the following format specifications:
 
+<div>
+	<h2>Test cases for user story &lt;story_name_placeholder&gt;:</h2> <!-- put story name here -->
 
-<h2>Test cases for user story &lt;story_name_placeholder&gt;:</h2> <!-- put story name here -->
+	<h3>Test Case &lt;Test case code name - Test case ID&gt;</h3>
 
-<h3>Test Case &lt;Test case code name - Test case ID&gt;</h3>
+	<table>
+		<tr>
+			<th>Test Case</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Title</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Pre-Conditions</th>
+			<td></td> <!-- may have multiple -->
+		</tr>
+		<tr>
+			<th>Requirement</th>
+			<td></td> <!-- may have multiple -->
+		</tr>
+	</table>
 
-<table>
-	<tr>
-		<th>Test Case</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th>Title</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th>Description</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th>Pre-Conditions</th>
-		<td></td> <!-- may have multiple -->
-	</tr>
-	<tr>
-		<th>Requirement</th>
-		<td></td> <!-- may have multiple -->
-	</tr>
-</table>
-
-<table>
-	<tr>
-		<th>Action</th>
-		<th>Expected Result</th>
-	</tr>
-	<tr>
-		<td>Action</td> <!-- may have multiple -->
-		<td>Expected Result</td> <!-- may have multiple -->
-	</tr>
-</table>
+	<table>
+		<tr>
+			<th>Action</th>
+			<th>Expected Result</th>
+		</tr>
+		<tr>
+			<td>Action</td> <!-- may have multiple -->
+			<td>Expected Result</td> <!-- may have multiple -->
+		</tr>
+	</table>
+<div/>
