@@ -1,90 +1,241 @@
-Test cases for user story C:
-- Test Case AddPersonalReference-001
+<h2>Test cases for user story STORY_NAME:</h2>
 
-[table]
-| Test Case      | AddPersonalReference-001                        |
-| Title          | Adding a Personal Reference                     |
-| Description    | Verify that the user can add a personal reference to the form. |
-| Pre-Conditions | The user has accessed an FO form.               |
-| Requirement    | REQ-UCC07-010 Add personal reference            |
-[/table]
+<h3>Test Case TC-PrivacyPolicyAcceptance-001</h3>
 
-[table]
-| Action                                 | Expected Result                                 |
-|----------------------------------------|-------------------------------------------------|
-| GIVEN the user is on the Personal Reference section | The Personal Reference section is displayed.   |
-| WHEN the user enters a valid personal reference | The input is accepted.                          |
-| AND clicks the save button             | The system saves the personal reference on the current form. |
-[/table]
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td>TC-PrivacyPolicyAcceptance-001</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Accept Privacy Policy</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>Verify that the user can proceed with the application after accepting the Privacy Policy.</td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td>User has accessed an FO form.</td>
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td>REQ-UCC06-010 Privacy policy consent</td>
+	</tr>
+</table>
 
-- Test Case ValidatePersonalReference-002
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>On application start or resume, the system displays the Privacy Policy modal.</td>
+		<td>Privacy Policy modal is displayed with the content and "Accept and Close" button.</td>
+	</tr>
+	<tr>
+		<td>User clicks on "Accept and Close" button.</td>
+		<td>The modal closes, and the user can proceed with the current application.</td>
+	</tr>
+</table>
 
-[table]
-| Test Case      | ValidatePersonalReference-002                  |
-| Title          | Validating Personal Reference Input            |
-| Description    | Verify that the system validates the personal reference input according to the defined rules. |
-| Pre-Conditions | The user has accessed an FO form and is in the Personal Reference section. |
-| Requirement    | REQ-UCC07-010 Add personal reference           |
-[/table]
+<h3>Test Case TC-PrivacyPolicyRejection-002</h3>
 
-[table]
-| Action                                 | Expected Result                                 |
-|----------------------------------------|-------------------------------------------------|
-| GIVEN the user is on the Personal Reference section | The Personal Reference section is displayed.   |
-| WHEN the user enters a personal reference with invalid characters | A tooltip message UCC07_MSG_01 is displayed informing about valid characters. |
-| AND clicks the save button             | The system does not save the invalid personal reference. |
-[/table]
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td>TC-PrivacyPolicyRejection-002</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Reject Privacy Policy</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>Verify that the user cannot proceed with the application if the Privacy Policy is not accepted.</td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td>User has accessed an FO form.</td>
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td>REQ-UCC06-010 Privacy policy consent</td>
+	</tr>
+</table>
 
-- Test Case EditPersonalReference-003
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>On application start or resume, the system displays the Privacy Policy modal.</td>
+		<td>Privacy Policy modal is displayed without an option to reject, only to review or accept.</td>
+	</tr>
+	<tr>
+		<td>User attempts to proceed without clicking "Accept and Close".</td>
+		<td>The user remains on the initial step of the application and cannot proceed.</td>
+	</tr>
+</table>
 
-[table]
-| Test Case      | EditPersonalReference-003                       |
-| Title          | Editing a Personal Reference                    |
-| Description    | Verify that the user can edit an existing personal reference. |
-| Pre-Conditions | The user has accessed an FO form with an existing personal reference. |
-| Requirement    | REQ-UCC07-010 Add personal reference            |
-[/table]
+<h3>Test Case TC-CookiesPolicyAcceptance-003</h3>
 
-[table]
-| Action                                 | Expected Result                                 |
-|----------------------------------------|-------------------------------------------------|
-| GIVEN the user is on the Personal Reference section with an existing reference | The Personal Reference section is displayed with the existing reference in edit mode. |
-| WHEN the user modifies the personal reference | The input is accepted.                          |
-| AND clicks the save button             | The system updates the personal reference on the current form. |
-[/table]
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td>TC-CookiesPolicyAcceptance-003</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Accept Cookies Policy</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>Verify that the user can proceed with the application after allowing cookies as per the Cookies Policy.</td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td>User has accessed an FO form.</td>
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td>REQ-UCC06-020 Cookies policy</td>
+	</tr>
+</table>
 
-- Test Case RemovePersonalReference-004
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>On application start or resume, the system displays the Cookies Policy overlay.</td>
+		<td>Cookies Policy overlay is displayed with an option to allow cookies.</td>
+	</tr>
+	<tr>
+		<td>User clicks on the option to allow cookies.</td>
+		<td>The overlay closes, and the user can proceed with the current application.</td>
+	</tr>
+</table>
 
-[table]
-| Test Case      | RemovePersonalReference-004                     |
-| Title          | Removing a Personal Reference                   |
-| Description    | Verify that the user can remove an existing personal reference. |
-| Pre-Conditions | The user has accessed an FO form with an existing personal reference. |
-| Requirement    | REQ-UCC07-010 Add personal reference            |
-[/table]
+<h3>Test Case TC-CookiesPolicyNonInteraction-004</h3>
 
-[table]
-| Action                                 | Expected Result                                 |
-|----------------------------------------|-------------------------------------------------|
-| GIVEN the user is on the Personal Reference section with an existing reference | The Personal Reference section is displayed with the existing reference. |
-| WHEN the user clicks the remove button | The personal reference is removed from the form. |
-| AND clicks the save button             | The system saves the current form without the personal reference. |
-[/table]
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td>TC-CookiesPolicyNonInteraction-004</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Non-Interaction with Cookies Policy</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>Verify that the user cannot proceed with the application without interacting with the Cookies Policy overlay.</td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td>User has accessed an FO form.</td>
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td>REQ-UCC06-020 Cookies policy</td>
+	</tr>
+</table>
 
-- Test Case ImportPersonalReference-005
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>On application start or resume, the system displays the Cookies Policy overlay.</td>
+		<td>Cookies Policy overlay is displayed with an option to allow cookies.</td>
+	</tr>
+	<tr>
+		<td>User does not interact with the option to allow cookies and attempts to proceed with the application.</td>
+		<td>The user remains on the initial step of the application and cannot proceed until the option to allow cookies is selected.</td>
+	</tr>
+</table>
 
-[table]
-| Test Case      | ImportPersonalReference-005                     |
-| Title          | Importing a Personal Reference                  |
-| Description    | Verify that the system can import and display a personal reference from a previous TM/DS application. |
-| Pre-Conditions | The user is starting the application by importing a previous TM/DS application where the Personal Reference option was selected. |
-| Requirement    | REQ-UCC07-010 Add personal reference            |
-[/table]
+<h3>Test Case TC-PrivacyPolicyModalNavigation-005</h3>
 
-[table]
-| Action                                 | Expected Result                                 |
-|----------------------------------------|-------------------------------------------------|
-| GIVEN the user imports a previous TM/DS application with a Personal Reference | The system retrieves and displays the Personal Reference in edit mode. |
-| WHEN the user views the Personal Reference section | The imported personal reference is displayed for editing. |
-| AND clicks the save button             | The system saves the personal reference on the current form. |
-[/table]
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td>TC-PrivacyPolicyModalNavigation-005</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Navigation within Privacy Policy Modal</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>Verify that the user can navigate through the content of the Privacy Policy within the modal.</td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td>User has accessed an FO form.</td>
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td>REQ-UCC06-010 Privacy policy consent</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>On application start or resume, the system displays the Privacy Policy modal.</td>
+		<td>Privacy Policy modal is displayed with scrollable content.</td>
+	</tr>
+	<tr>
+		<td>User navigates through the content of the Privacy Policy within the modal.</td>
+		<td>The user is able to scroll through and read the entire Privacy Policy content within the modal.</td>
+	</tr>
+</table>
+
+<h3>Test Case TC-CookiesPolicyLinkAccess-006</h3>
+
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td>TC-CookiesPolicyLinkAccess-006</td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td>Accessing Cookies Policy through Link</td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td>Verify that the user can access the full Cookies Policy through the link provided in the Cookies Policy overlay.</td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td>User has accessed an FO form.</td>
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td>REQ-UCC06-020 Cookies policy</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>On application start or resume, the system displays the Cookies Policy overlay with a link to the full policy.</td>
+		<td>Cookies Policy overlay is displayed with a link to the full Cookies Policy.</td>
+	</tr>
+	<tr>
+		<td>User clicks on the link to the full Cookies Policy.</td>
+		<td>The full Cookies Policy is displayed in a new modal window or tab, allowing the user to read it.</td>
+	</tr>
+</table>

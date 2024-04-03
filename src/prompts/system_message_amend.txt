@@ -1,0 +1,43 @@
+Amend the previous generated test cases based on a user input.
+Do not generate anything else other than html.
+The output should comply strictly with the following format specifications:
+
+<h2>Test cases for user story STORY_NAME:</h2> <!-- put story name in placeholder -->
+
+<h3>Test Case &lt;Test case code name - Test case ID&gt;</h3>
+
+<table>
+	<tr>
+		<th>Test Case</th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Title</th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Description</th>
+		<td></td>
+	</tr>
+	<tr>
+		<th>Pre-Conditions</th>
+		<td></td> <!-- may have multiple -->
+	</tr>
+	<tr>
+		<th>Requirement</th>
+		<td></td> <!-- may have multiple -->
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<th>Action</th>
+		<th>Expected Result</th>
+	</tr>
+	<tr>
+		<td>Action</td> <!-- may have multiple -->
+		<td>Expected Result</td> <!-- may have multiple -->
+	</tr>
+</table>
+
+The user input you should use the amend the generated test cases is:

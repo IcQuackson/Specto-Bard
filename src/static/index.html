@@ -7,17 +7,24 @@
 </head>
 <body>
     <h1>Input Text</h1>
-    <form action="/" method="POST" enctype="multipart/form-data">
+    <form action="/generate_tests" method="POST" enctype="multipart/form-data">
         <label for="text">Enter Text:</label><br>
         <textarea id="text" name="text" rows="4" cols="50" placeholder="Enter your text here..."></textarea><br><br>
-<!--         <label for="file">Upload Text File:</label><br>
-        <input type="file" id="file" name="file"><br><br> -->
         <input type="submit" value="Submit">
     </form>
-	<form action="/" method="POST" enctype="multipart/form-data">
+	<form action="/generate_tests" method="POST" enctype="multipart/form-data">
 		<label for="file">Upload Text File:</label><br>
 		<input type="file" id="file" name="file"><br><br>
 		<input type="submit" value="Submit">
+	</form>
+	<h2>Amend Generated Test Cases</h2>
+    <form action="/amend_tests" method="POST">
+        <label for="amended_text">Amend Test Cases:</label><br>
+        <textarea id="amended_text" name="amended_text" rows="4" cols="50" placeholder="Amend your test cases here..."></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+	<form action="/generate_tests" method="POST">
+		<button type="submit" formaction="/clear_messages">Clear Conversation</button>
 	</form>
 </body>
 </html>
