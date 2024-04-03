@@ -1,0 +1,40 @@
+USER STORY D
+
+Pre-condition(s)
+
+The user accesses the login page of the application.
+Actor(s)
+
+User.
+
+Post-condition(s)
+
+The system authenticates the user's credentials.
+Upon successful authentication, the user gains access to the application dashboard.
+Requirements
+
+REQ-UL01-010 User Authentication
+
+The system shall prompt the user to enter their username and password.
+The system verifies the provided credentials against the stored user data.
+If the credentials are valid, the user is granted access to the application dashboard.
+If the credentials are invalid, the system displays an error message indicating authentication failure.
+
+Information model
+# Field label Description Type M/O/System Rules Visibility
+1 Username User's unique identifier string M User must enter a valid username On login page.
+2 Password User's secret key for authentication string M User must enter a valid password. On login page.
+3 Remember Me Option to remember user's login credentials Option O If selected, user's username will be  aved for future logins. On login page.
+4 Forgot Password? Link to reset password string O Clicking this link redirects user to password reset  age. On login page.
+5 Login Button Button to submit login credentials Option M Activated when both username and password are provided. On login page.
+
+Messages
+Code Type Message
+UL01_MSG_01 Error Invalid username or password. Please try again.
+UL01_MSG_02 Success Login successful. Redirecting to dashboard.
+
+Acceptance Criteria
+User enters valid username and password.
+System verifies the provided credentials.
+If credentials are valid, the system grants access to the application dashboard.
+If credentials are invalid, the system displays an error message and prompts the user to try again.
