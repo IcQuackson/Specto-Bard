@@ -37,7 +37,7 @@ body {
   
 .display-area {
 	flex: 1;
-	background-color: #213C45;
+	background-color: #808587;
 	padding: 10px;
 	color: white;
 	overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
@@ -121,16 +121,25 @@ body {
 	background-color: #BE601D;
   }
   
-	.input-bar {
-	  position: sticky;
-	  bottom: 0;
-	  background-color: #FBE7D8;
-	  padding: 10px;
-	  width: 100%;
-	  box-sizing: border-box;
-	  color: white;
-	  overflow: hidden;
-	}
+  .input-bar {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items with space between */
+    position: sticky;
+    bottom: 0;
+    background-color: #FBE7D8;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    overflow: hidden;
+}
+
+.input-bar input[type="text"] {
+    flex: 1; /* Grow to fill available space */
+    margin-right: 10px; /* Add margin between input and button */
+	margin-bottom: 0px !important;
+}	
+
 
 
 	/* The Modal (background) */
@@ -146,7 +155,7 @@ body {
 	text-align: center;
 	margin-top: 40vh;	
 	justify-content: center;
-  }
+}
 
 /* Modal Content */
 .modal-content {
@@ -156,10 +165,66 @@ body {
 	border: 3px solid #213C45;
 	width: 80%;
 	text-align: center;
-  }
+}
 
-  .modal-p {
-	  color: #213C45;
-	  font-family: Arial Bold;
-	  font-style: bold;
-  }
+.modal-p {
+	color: #213C45;
+	font-family: Arial Bold;
+	font-style: bold;
+}
+
+
+/* Styles for tables within the display area */
+.display-area table {
+	width: 100%; /* Makes tables span the full width of their container */
+	border-collapse: collapse; /* Collapses the border between table cells */
+	margin-bottom: 20px; /* Adds space between tables */
+}
+
+/* Styles for table header and data cells */
+.display-area th, .display-area td {
+	padding: 8px; /* Adds padding around the content inside table cells */
+	text-align: left; /* Aligns the text to the left within table cells */
+	border: 1px solid #dddddd; /* Sets a border around each table cell */
+}
+
+/* Styles for table header cells */
+.display-area th {
+	background-color: #b6afa4; /* Sets a background color for table header cells */
+}
+
+/* Styles for even-numbered rows */
+.display-area tbody tr {
+	background-color: #686868; /* Alternates the background color of even-numbered rows for better readability */
+}
+
+/* Style for radio button forms */
+form {
+    margin-top: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="radio"] {
+    margin-right: 5px;
+}
+
+.options-container {
+    CONTAIN-INTRINSIC-BLOCK-SIZE: AUTO 100PX;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 10px;
+    height: fit-content;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.radio-container form{
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}

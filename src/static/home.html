@@ -14,16 +14,56 @@
     <div class="container">
         <div class="text-area" type="text">
 			<textarea id="textInput" placeholder="Type your story..."></textarea>
-          <div class="buttons-cnt">
-            <button onclick="submitStory()">Submit Story</button>
-            <button onclick="uploadFile()">Upload file</button>
-           </div>
-         </div>
+			<div class="options-container">
+				<div class="radio-container">
+					<form id="automaticManualForm">
+						<label>
+							<input type="radio" name="automaticManual" value="default" checked>
+							Default
+						</label>
+						<label>
+							<input type="radio" name="automaticManual" value="automatic">
+							Automatic Tests
+						</label>
+						<label>
+							<input type="radio" name="automaticManual" value="manual">
+							Manual Tests
+						</label>
+					</form>
+				</div>
+				
+				<div class="radio-container">
+					<form id="testTypeForm">
+						<label>
+							<input type="radio" name="testType" value="default" checked>
+							Default
+						</label>
+						<label>
+							<input type="radio" name="testType" value="unit">
+							Unit Tests
+						</label>
+						<label>
+							<input type="radio" name="testType" value="system">
+							System Tests
+						</label>
+						<label>
+							<input type="radio" name="testType" value="integration">
+							Integration Tests
+						</label>
+					</form>
+				</div>
+				<div class="buttons-cnt">
+					<button onclick="uploadFile()">Upload file</button>
+					<button onclick="submitStory()">Submit Story</button>
+				</div>
+			</div>
+		</div>
         <div class="gap"></div>
         <div class="display-area" id="displayText"></div>
     </div>
   <div class="input-bar">
-    <input type="text" placeholder="Would you like to change something?">
+    <input id="amend-textbar" type="text" placeholder="Type here to suggest changes to the response">
+	<button onclick="amendTests()">Suggest Changes</button>
   </div>
   <script src="/static/js/script.js"></script>
 </body>

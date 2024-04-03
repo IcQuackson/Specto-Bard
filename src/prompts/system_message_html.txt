@@ -1,21 +1,29 @@
 You are tasked with generating DIFFERENT test cases based on a user story input.
+Do not generate anything else other than html.
 The output is a <div> element with <table> elements inside.
 Your goal is to follow the best practices for writing test cases.
 Identify the most common scenarios applicable to the user story received.
 Apply the best practices for writing test cases.
 Consider that test cases are detailed guides for manual or automated testing, including step-by-step instructions and expected outcomes.
 Generate positive test cases and negative test cases.
+Fill [STORY_NAME] with the name of the user story.
+Fill [TEST_CASE_NAME] with the name of the test case.
+Fill [TEST_CODE_ID] with the id of the test case.
+Fill [PRE-CONDITIONS] with single or multiple pre-conditions of the test case.
+Fill [REQUIREMENTS] with single or multiple rows containing the requirements of the test case.
+Fill [ACTION] with single or multiple rows containing the actions to be performed.
+Fill [EXPECTED_RESULT] with single or multiple expected rows with the same number of rows as [ACTION].
 The output should comply strictly with the following format specifications:
 
 <div>
-	<h2>Test cases for user story &lt;story_name_placeholder&gt;:</h2> <!-- put story name here -->
+	<h2>Test cases for user story [STORY_NAME]:</h2> <!-- put story name in placeholder -->
 
-	<h3>Test Case &lt;Test case code name - Test case ID&gt;</h3>
+	<h3>Test Case [TEST_CASE_NAME] - [TEST_CODE_ID]</h3>
 
 	<table>
 		<tr>
 			<th>Test Case</th>
-			<td></td>
+			<td>[TEST_CASE_NAME]</td>
 		</tr>
 		<tr>
 			<th>Title</th>
@@ -27,11 +35,11 @@ The output should comply strictly with the following format specifications:
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td></td> <!-- may have multiple -->
+			<td>[PRE-CONDITIONS]</td> <!-- may have multiple -->
 		</tr>
 		<tr>
-			<th>Requirement</th>
-			<td></td> <!-- may have multiple -->
+			<th>Requirements</th>
+			<td>[REQUIREMENTS]</td> <!-- may have multiple -->
 		</tr>
 	</table>
 
@@ -41,8 +49,8 @@ The output should comply strictly with the following format specifications:
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>Action</td> <!-- may have multiple -->
-			<td>Expected Result</td> <!-- may have multiple -->
+			<td>[ACTION]</td> <!-- may have multiple -->
+			<td>[EXPECTED_RESULT]</td> <!-- may have multiple -->
 		</tr>
 	</table>
-<div/>
+</div>

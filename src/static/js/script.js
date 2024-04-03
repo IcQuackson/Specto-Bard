@@ -107,18 +107,97 @@ async function fetchTestCases(story) {
         }
 
         const data = response.text();
-        // Do something with the data
         console.log('Data:', data);
 
-        // Return the data or do further processing
 		fetch_data_flag = true;
         return data;
     } catch (error) {
-        // Handle errors
 		fetch_data_flag = true;
 		console.log('Error: ', error.message);
         return null;
     }
+}
+
+// Handles amend tests button
+async function amendTests() {
+	let amendTextbar = document.getElementById("amend-textbar");
+	let amendText = amendTextbar.value;
+
+	if (amendText == "") {
+		alert("Please enter text to amend");
+		return;
+	}
+
+	fetch_data_flag = false;
+	const [amendTestsResult, loadingScreenResult] = await Promise.all([
+		fetchAmendTests(amendText),
+		loadingScreen()
+	]);
+	
+	if (amendTestsResult == null) {
+		alert("Tests are invalid");
+	} else {
+		console.log(amendTestsResult);
+		displayText.innerHTML = amendTestsResult;
+	}
+}
+
+// Handles amend tests data fetch
+async function fetchAmendTests(amended_text) {
+	let payload = {'amended_text': amended_text}
+	try {
+		console.log('Fetching data...')
+		fetch_data_flag = false;
+
+		const response = await fetch(AMEND_TESTS_URL, {
+			method: 'POST',
+			body: JSON.stringify(payload),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		console.log('Response:', response);
+
+		if (!response.ok) {
+			fetch_data_flag = true;
+			throw new Error('Failed to fetch data');
+		}
+
+		const data = response.text();
+		console.log('Data:', data);
+
+		fetch_data_flag = true;
+		return data;
+	} catch (error) {
+		console.log('Error: ', error.message);
+		fetch_data_flag = true;
+		return null;
+	}
+}
+
+// Handles clear messages data fetch
+async function fetchClearMessages() {
+	try {
+		console.log('Fetching data...')
+		const response = await fetch(CLEAR_MESSAGES_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		console.log('Response:', response);
+
+		if (!response.ok) {
+			throw new Error('Failed to fetch data');
+		}
+
+		const data = response.json();
+		console.log('Data:', data);
+		return data;
+	} catch (error) {
+		console.log('Error: ', error.message);
+		return null;
+	}
 }
 
 // Handles display modal
@@ -128,13 +207,16 @@ function displayModal() {
 
 // Handles loading screen while fetching data
 async function loadingScreen() {
-	let i = 0;
 	let modal = document.getElementById("SBModal");
 	modal.style.display = "block";
+
+	let i = 0;
 	while (!fetch_data_flag) {
 		var randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
-		document.getElementById("modal-fact").textContent = randomFact;
-		await new Promise(resolve => setTimeout(resolve, 6000));
+		if (i % 7 == 0) {
+			document.getElementById("modal-fact").textContent = randomFact;
+		}
+		await new Promise(resolve => setTimeout(resolve, 1000));
 		i++;
 	}
 	modal.style.display = "none";

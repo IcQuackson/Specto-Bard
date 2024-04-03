@@ -160,7 +160,7 @@ Endpoint to return index.html
 Parameters:	None
 Returns:	index.html
 """
-@app.route('/index.html', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_index():
 	return send_from_directory('static', 'home.html')
 
