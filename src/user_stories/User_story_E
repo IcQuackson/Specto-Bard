@@ -1,0 +1,45 @@
+USER STORY E
+
+Pre-condition(s):
+
+The user is logged into the e-commerce platform.
+The user is browsing the product catalog.
+Actor(s):
+
+User.
+
+Post-condition(s):
+
+The selected product is added to the user's shopping cart.
+The total cost of the shopping cart is updated accordingly.
+Requirements:
+
+REQ-EC01-010 Product Catalog Display
+
+The system shall display a list of products available for purchase.
+Each product listing shall include details such as name, price, and image.
+REQ-EC02-020 Add Product to Shopping Cart
+
+The system shall provide an "Add to Cart" button for each product displayed in the catalog.
+Upon clicking the "Add to Cart" button, the selected product shall be added to the user's shopping cart.
+The quantity of the selected product in the cart shall be incremented by one.
+Information model:
+
+#	Field label	Description	Type	M/O/System	Rules	Visibility
+1	Product Name	Name of the product	string	M	Display product name in the catalog.	On product catalog page.
+2	Product Price	Price of the product	float	M	Display product price in the catalog.	On product catalog page.
+3	Product Image	Visual representation of the product	string	M	Display product image in the catalog.	On product catalog page.
+4	Add to Cart Button	Button to add product to shopping cart	Option	M	Activated when user selects a product.	On product listing in the catalog.
+Messages:
+
+Code	Type	Message
+EC02_MSG_01	Success	Product successfully added to the shopping cart.
+EC02_MSG_02	Error	Failed to add product to the shopping cart. Please try again.
+Acceptance Criteria:
+
+User navigates to the product catalog.
+User selects a product from the catalog.
+User clicks the "Add to Cart" button.
+System adds the selected product to the shopping cart.
+System increments the quantity of the selected product in the cart by one.
+System updates the total cost of the shopping cart.
