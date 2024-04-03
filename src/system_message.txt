@@ -22,5 +22,5 @@ Test cases for user story <NAME>:
 | Action (may be multiple) | Expected Result (may be multiple) |
 [/table]
 
-For each action try to associate a gherkin tag so they will be more compatible with feature files.
+For each action try to associate a gherkin Key word so they will be more compatible with feature files.
 If you encounter any &nbsp tags please ignore them.
