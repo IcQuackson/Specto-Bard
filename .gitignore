@@ -1,3 +1,4 @@
 .env
 __pycache__/
 src/test_cases.txt
+src/out/*

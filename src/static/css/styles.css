@@ -131,3 +131,35 @@ body {
 	  color: white;
 	  overflow: hidden;
 	}
+
+
+	/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	/* padding-top: 100px; */ /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	text-align: center;
+	margin-top: 40vh;	
+	justify-content: center;
+  }
+
+/* Modal Content */
+.modal-content {
+	background-color: #fbe7d8;
+	margin: auto;
+	padding: 20px;
+	border: 3px solid #213C45;
+	width: 80%;
+	text-align: center;
+  }
+
+  .modal-p {
+	  color: #213C45;
+	  font-family: Arial Bold;
+	  font-style: bold;
+  }
