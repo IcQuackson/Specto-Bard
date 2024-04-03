@@ -1,0 +1,90 @@
+Test cases for user story C:
+- Test Case AddPersonalReference-001
+
+[table]
+| Test Case      | AddPersonalReference-001                        |
+| Title          | Adding a Personal Reference                     |
+| Description    | Verify that the user can add a personal reference to the form. |
+| Pre-Conditions | The user has accessed an FO form.               |
+| Requirement    | REQ-UCC07-010 Add personal reference            |
+[/table]
+
+[table]
+| Action                                 | Expected Result                                 |
+|----------------------------------------|-------------------------------------------------|
+| GIVEN the user is on the Personal Reference section | The Personal Reference section is displayed.   |
+| WHEN the user enters a valid personal reference | The input is accepted.                          |
+| AND clicks the save button             | The system saves the personal reference on the current form. |
+[/table]
+
+- Test Case ValidatePersonalReference-002
+
+[table]
+| Test Case      | ValidatePersonalReference-002                  |
+| Title          | Validating Personal Reference Input            |
+| Description    | Verify that the system validates the personal reference input according to the defined rules. |
+| Pre-Conditions | The user has accessed an FO form and is in the Personal Reference section. |
+| Requirement    | REQ-UCC07-010 Add personal reference           |
+[/table]
+
+[table]
+| Action                                 | Expected Result                                 |
+|----------------------------------------|-------------------------------------------------|
+| GIVEN the user is on the Personal Reference section | The Personal Reference section is displayed.   |
+| WHEN the user enters a personal reference with invalid characters | A tooltip message UCC07_MSG_01 is displayed informing about valid characters. |
+| AND clicks the save button             | The system does not save the invalid personal reference. |
+[/table]
+
+- Test Case EditPersonalReference-003
+
+[table]
+| Test Case      | EditPersonalReference-003                       |
+| Title          | Editing a Personal Reference                    |
+| Description    | Verify that the user can edit an existing personal reference. |
+| Pre-Conditions | The user has accessed an FO form with an existing personal reference. |
+| Requirement    | REQ-UCC07-010 Add personal reference            |
+[/table]
+
+[table]
+| Action                                 | Expected Result                                 |
+|----------------------------------------|-------------------------------------------------|
+| GIVEN the user is on the Personal Reference section with an existing reference | The Personal Reference section is displayed with the existing reference in edit mode. |
+| WHEN the user modifies the personal reference | The input is accepted.                          |
+| AND clicks the save button             | The system updates the personal reference on the current form. |
+[/table]
+
+- Test Case RemovePersonalReference-004
+
+[table]
+| Test Case      | RemovePersonalReference-004                     |
+| Title          | Removing a Personal Reference                   |
+| Description    | Verify that the user can remove an existing personal reference. |
+| Pre-Conditions | The user has accessed an FO form with an existing personal reference. |
+| Requirement    | REQ-UCC07-010 Add personal reference            |
+[/table]
+
+[table]
+| Action                                 | Expected Result                                 |
+|----------------------------------------|-------------------------------------------------|
+| GIVEN the user is on the Personal Reference section with an existing reference | The Personal Reference section is displayed with the existing reference. |
+| WHEN the user clicks the remove button | The personal reference is removed from the form. |
+| AND clicks the save button             | The system saves the current form without the personal reference. |
+[/table]
+
+- Test Case ImportPersonalReference-005
+
+[table]
+| Test Case      | ImportPersonalReference-005                     |
+| Title          | Importing a Personal Reference                  |
+| Description    | Verify that the system can import and display a personal reference from a previous TM/DS application. |
+| Pre-Conditions | The user is starting the application by importing a previous TM/DS application where the Personal Reference option was selected. |
+| Requirement    | REQ-UCC07-010 Add personal reference            |
+[/table]
+
+[table]
+| Action                                 | Expected Result                                 |
+|----------------------------------------|-------------------------------------------------|
+| GIVEN the user imports a previous TM/DS application with a Personal Reference | The system retrieves and displays the Personal Reference in edit mode. |
+| WHEN the user views the Personal Reference section | The imported personal reference is displayed for editing. |
+| AND clicks the save button             | The system saves the personal reference on the current form. |
+[/table]

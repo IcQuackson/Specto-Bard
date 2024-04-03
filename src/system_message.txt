@@ -6,7 +6,7 @@ Consider that test cases are detailed guides for manual or automated testing, in
 The output should comply strictly with the following format specifications:
 
 Test cases for user story <NAME>:
-- Test Case <Test case id>
+- Test Case <Test case code name - Test case ID>
 
 [table]
 | Test Case      | Placeholder                        |
@@ -23,4 +23,3 @@ Test cases for user story <NAME>:
 [/table]
 
 For each action try to associate a gherkin Key word so they will be more compatible with feature files.
-If you encounter any &nbsp tags please ignore them.

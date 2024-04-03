@@ -1,0 +1,61 @@
+USER STORY B
+
+Pre-condition(s)
+
+The user started a TM or DS e-Filing application form.
+
+Actor(s)
+
+User.
+
+Post-condition(s)
+
+The system saves the value of the application language(s) on the current form. Based on the type of the current form, the system uses the value of the application language(s) to:
+
+· Manage Goods and Services terms (In case of TM e-filing)
+
+· Manage Product Indication (In case of DS e-filing)
+
+· The watermark on the draft application receipt print
+
+Requirements
+
+REQ-UCC08-010 Specify language
+
+The user can select the language for the trademark/design application from the provided
+
+language(s) list (the 23 EU official languages).
+
+REQ-UCC08-020 Change language(s)
+
+If the user changes the first language of the application and the trademark/design information is
+
+already filled in, the system will display a warning message (UCC08_MSG_01) letting the user
+
+know that the trademark/design information and good and services/product indication list will be
+
+removed from the form.
+
+The user can accept or cancel the warning. If the user accepts, the system closes the warning, the
+
+information will be cleared and the new language value set. If the user cancels, the system closes
+
+the warning and discards the language change.
+
+REQ-UCC08-030 Language(s) value for imported data
+
+If the user imported the details of the TM/DS from an existing application, then the value of the
+
+language(s) is set as part of the imported application.
+
+Information model
+
+# Field label Description Type M/O/System Rules Visibility
+
+1 First language 1st application language. List of values M One of the 23 EU languages. 1
+
+Messages
+
+Code Type Message
+
+UCC08_MSG_01 Warning "The goods and services list and the type of mark information will be cleared. Please, confirm you want to change the language"

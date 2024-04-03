@@ -1,0 +1,63 @@
+USER STORY A
+
+Pre-condition(s)
+
+The user has accessed an FO form.
+
+Actor(s)
+
+User.
+
+Post-condition(s)
+
+· The system records the explicit consent of the user together with the date and time stamp of the user’s consent
+
+· The user can start or resume the current application form
+
+Requirements
+
+REQ-UCC06-010 Privacy policy consent
+
+On applications start or resume, the system displays an overlay or a modal window that lists the
+
+content of the Privacy Policy, with options to review and accept.
+
+If the user accepts, the user can proceed with the current application.
+
+If the user does not accept, the user cannot proceed with the current application and remains on
+
+the initial step of the application.
+
+REQ-UCC06-020 Cookies policy
+
+On applications start or resume, the system displays a header/footer overlay with the content of
+
+the Cookies policy, with options to review and accept.
+
+The user only has the option to allow system cookies. There's no option to block the system
+
+cookies.
+
+If the user does not allow, the user cannot proceed with the current application and remains on
+
+the initial step of the application.
+
+Information model
+
+# Field label Description Type M/O/System Rules Visibility
+
+1 Privacy Policy message Content of the Privacy Policy text. Text System The content of the Privacy Policy modal is specific for each IPO. On applications start or resume.
+
+2 Accept and Close Button on privacy policy pop up to 'Accept and close' the pop up. Option M The user can only proceed with the current application in case the Privacy policy has been accepted. On applications start or resume.
+
+3 Cookie Policy Cookies header or footer that overlays the website in order to grant permission. Text O Displayed cookie policy UCC06_MSG_01. The cookie policy link brings you to the relevant cookie policy in a new modal window. On applications start or resume.
+
+4 Cookies acceptance Option to black or allow the cookies. Options M Possible options: · Allow cookies: Clicking on this option allows the website to save cookies on the computer. The user can only proceed with the current application when On applications start.
+
+# Field label Description Type M/O/System Rules Visibility the cookies are allowed.
+
+Messages
+
+Code Type Message
+
+UCC06_MSG_01 Informative This website uses cookies to remember your settings and gather web statistics. You will have to grant permission for the installation of these cookies. More information on our cookie policy.

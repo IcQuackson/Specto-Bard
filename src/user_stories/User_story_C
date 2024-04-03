@@ -1,0 +1,47 @@
+USER STORY C
+
+Pre-condition(s)
+
+The user has accessed an FO form.
+
+Actor(s)
+
+User.
+
+Post-condition(s)
+
+The system saves the personal reference on the current form.
+
+Requirements
+
+REQ-UCC07-010 Add personal reference
+
+The system displays the Personal reference section.
+
+· When starting the application by importing a previous application, if the Personal
+
+Reference option was selected, the system shall retrieve the Personal reference value from
+
+the imported TM/DS application, save in the form and display for the user in edit mode.
+
+The user shall key-in the information as requested by the Personal reference field.
+
+The system validates the input data according to the rules and saves it on the current form.
+
+The user can edit or remove the Personal reference.
+
+Information model
+
+# Field label Description Type M/O/System Rules Visibility
+
+1 Personal reference Information provided by the user/imported for a TM/DS to serve as personal reference to Text O Display the following Tooltip UCC07_MSG_01 UCC07_MSG_02. 1
+
+# Field label Description Type M/O/System Rules Visibility the application.
+
+Messages
+
+Code Type Message
+
+UCC07_MSG_01 Tooltip References should consist of up to 30 alphanumeric characters, using the Roman alphabet: a-z, A-Z, 0-9. The following symbols shall also be accepted: . - _ / \ Do not use spaces. For any future queries regarding your [proceeding], please use the official EUIPO reference
+
+UCC07_MSG_02 Disclaimer At section level: To help you keep track of your application, you may enter a personal reference number in this field. (Note: this is not the official application ID. For any future queries regarding your proceeding, please use the official application ID).
