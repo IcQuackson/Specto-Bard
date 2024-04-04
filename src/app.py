@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from flask import send_from_directory
 import os
+from docx import Document
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 load_dotenv()
@@ -30,6 +31,21 @@ with open(PROMPT_FOLDER + '/' + SYSTEM_MESSAGE, 'r') as file:
 messages = [""" {"role":"system","content": system_message} """]
 
 app = Flask(__name__)
+
+def extract_text_from_file(file):
+    filename = file.filename.lower()
+    if filename.endswith('.txt'):
+        # Read text from .txt file
+        return file.read().decode('utf-8')
+    elif filename.endswith('.docx'):
+        # Extract text from .docx file
+        doc = Document(file)
+        text = []
+        for paragraph in doc.paragraphs:
+            text.append(paragraph.text)
+        return '\n'.join(text)
+    else:
+        return 'Unsupported file format'
 
 def get_modified_system_message(system_message, automatic_manual, test_type):
 
@@ -66,12 +82,23 @@ Returns:	test_cases: string
 @app.route('/generate_tests', methods=['POST'])
 def generate_test_cases():
 
-	request_data = request.get_json()
-	print(request_data)
-	user_story = request_data.get('text')
-	# Retrieve automatic_manual_flag and test_type from request data
-	automatic_manual_flag = request_data.get('automaticManual')
-	test_type = request_data.get('testType')
+	user_story = ''
+	print('yooo')
+	print(request.form)
+
+	if 'file' in request.files:
+		file = request.files['file']
+		user_story = extract_text_from_file(file)
+		if user_story == 'Unsupported file format':
+			return jsonify({"error": "Unsupported file format. Please upload a .txt or .docx file"})
+		print('got file')
+		print(user_story)
+	else:
+		user_story = request.form.get('text')
+		print('got text')
+
+	automatic_manual_flag = request.form.get('automaticManual')
+	test_type = request.form.get('testType')
 	
 	if user_story is None or user_story == '':
 		return jsonify({"error": "User story not provided"})

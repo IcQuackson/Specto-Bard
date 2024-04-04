@@ -2,6 +2,7 @@ const GENERATE_TESTS_URL = '/generate_tests';
 const AMEND_TESTS_URL = '/amend_tests';
 const CLEAR_MESSAGES_URL = '/clear_messages';
 var fetch_data_flag = false;
+var uploaded_file = null;
 
 var modalHTML = `
 	<div id="SBModal" class="modal">
@@ -71,6 +72,7 @@ function getTestCasesByFile() {
 function uploadFile() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
+    fileInput.accept = '.docx, .txt'; // Accepts both DOCX and text files
     fileInput.onchange = handleFileUpload;
     fileInput.click();
 }
@@ -78,41 +80,52 @@ function uploadFile() {
 /* Handles file upload */
 function handleFileUpload(event) {
 	const file = event.target.files[0];
-	const reader = new FileReader();
-	reader.onload = function(e) {
-		const text = e.target.result;
-		document.getElementById('textInput').value = text;
-	}
-	reader.readAsText(file);
+	const fileName = file.name;
+	const textInput = document.getElementById('textInput')
+	textInput.value = fileName;
+	textInput.disabled = true;
+	// store the uploaded file
+	uploaded_file = event.target;
 }
 
 // Handles submit story data fetch
-async function fetchTestCases(story, automaticManual, testType) {
-	story = {'text': story, 'automaticManual': automaticManual, 'testType': testType};
-    try {
+async function fetchTestCases(file, story, automaticManual, testType) {
+
+	const formData = new FormData();
+	if (file != null) {
+		formData.append('file', uploaded_file.files[0]);
+		console.log('File:', uploaded_file.files[0]);
+	}
+	else {
+		formData.append('story', story);
 		console.log('Story:', story);
+	}
+	formData.append('automaticManual', automaticManual);
+	formData.append('testType', testType);
+    try {
+		console.log('FormData:', formData)
 		console.log('Fetching data...')
         const response = await fetch(GENERATE_TESTS_URL, {
             method: 'POST',
-            body: JSON.stringify(story),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: formData
         });
 		console.log('Response:', response);
 
         if (!response.ok) {
 			fetch_data_flag = true;
+			uploaded_file = null;
             throw new Error('Failed to fetch data');
         }
 
         const data = response.text();
         console.log('Data:', data);
 
+		uploaded_file = null;
 		fetch_data_flag = true;
         return data;
     } catch (error) {
 		fetch_data_flag = true;
+		uploaded_file = null;
 		console.log('Error: ', error.message);
         return null;
     }
@@ -233,9 +246,6 @@ async function submitStory() {
 	const testTypeForm = document.getElementById('testTypeForm');
 	const testType = testTypeForm.querySelector('input[name="testType"]:checked').value;
 
-	console.log(automaticManual);
-	console.log(testType);
-
 	if (inputText == "") {
 		alert("Please enter text to generate tests");
 		return;
@@ -243,7 +253,7 @@ async function submitStory() {
 
 	fetch_data_flag = false;
 	const [story, loadingScreenResult] = await Promise.all([
-        fetchTestCases(inputText, automaticManual, testType),
+        fetchTestCases(uploaded_file, inputText, automaticManual, testType),
         loadingScreen()
     ]);
 
@@ -265,6 +275,10 @@ async function resetHistory() {
 	}
 	// Clear display text
 	document.getElementById("displayText").innerHTML = "";
+	if (document.getElementById("textInput").disabled) {
+		document.getElementById("textInput").disabled = false;
+		document.getElementById("textInput").value = "";
+	}
 }
 
 function textAreaAdjust(element) {
