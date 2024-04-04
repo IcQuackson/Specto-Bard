@@ -36,10 +36,7 @@ app = Flask(__name__)
 
 def extract_text_from_file(file):
     filename = file.filename.lower()
-    if filename.endswith('.txt'):
-        # Read text from .txt file
-        return file.read().decode('utf-8')
-    elif filename.endswith('.docx'):
+    if filename.endswith('.docx'):
         # Extract text from .docx file
         doc = Document(file)
         text = []
@@ -47,7 +44,8 @@ def extract_text_from_file(file):
             text.append(paragraph.text)
         return '\n'.join(text)
     else:
-        return 'Unsupported file format'
+        # Read text from .txt file
+        return file.read().decode('utf-8')
 
 def get_modified_system_message(system_message, automatic_manual, test_type):
 

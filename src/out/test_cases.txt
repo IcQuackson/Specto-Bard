@@ -1,56 +1,20 @@
 <div>
-	<h2>Test cases for user story USER STORY A:</h2>
+	<h2>Test cases for user story USER STORY C:</h2>
 
-	<h3>Test Case TC02_PrivacyPolicyAcceptance</h3>
-
-	<table>
-		<tr>
-			<th>Test Case</th>
-			<td>TC02_PrivacyPolicyAcceptance</td>
-		</tr>
-		<tr>
-			<th>Title</th>
-			<td>Acceptance of Privacy Policy</td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td>Verify that the user can proceed with the application upon accepting the Privacy Policy.</td>
-		</tr>
-		<tr>
-			<th>Pre-Conditions</th>
-			<td>The Privacy Policy consent modal is displayed to the user.</td>
-		</tr>
-		<tr>
-			<th>Requirement</th>
-			<td>REQ-UCC06-010 Privacy policy consent</td>
-		</tr>
-	</table>
-
-	<table>
-		<tr>
-			<th>Action</th>
-			<th>Expected Result</th>
-		</tr>
-		<tr>
-			<td>Click on 'Accept and Close' button on the Privacy Policy consent modal.</td>
-			<td>The user can proceed with the current application.</td>
-		</tr>
-	</table>
-
-	<h3>Test Case TC03_CookiesPolicyDisplay</h3>
+	<h3>Test Case TC02</h3>
 
 	<table>
 		<tr>
 			<th>Test Case</th>
-			<td>TC03_CookiesPolicyDisplay</td>
+			<td>TC02</td>
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>Display of Cookies Policy Consent</td>
+			<td>Add invalid personal reference</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the Cookies Policy consent header/footer is displayed to the user on the start or resume of an application.</td>
+			<td>Verify that the system prevents the addition of an invalid personal reference and displays an appropriate message.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
@@ -58,7 +22,7 @@
 		</tr>
 		<tr>
 			<th>Requirement</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
+			<td>REQ-UCC07-010 Add personal reference</td>
 		</tr>
 	</table>
 
@@ -68,33 +32,33 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>Start or resume an application.</td>
-			<td>The Cookies Policy consent header/footer is displayed to the user.</td>
+			<td>Enter an invalid personal reference 'Ref#123'.</td>
+			<td>The system displays a tooltip message: "References should consist of up to 30 alphanumeric characters, using the Roman alphabet: a-z, A-Z, 0-9. The following symbols shall also be accepted: . - _ / \ Do not use spaces."</td>
 		</tr>
 	</table>
 
-	<h3>Test Case TC04_CookiesAcceptance</h3>
+	<h3>Test Case TC03</h3>
 
 	<table>
 		<tr>
 			<th>Test Case</th>
-			<td>TC04_CookiesAcceptance</td>
+			<td>TC03</td>
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>Acceptance of Cookies Policy</td>
+			<td>Edit personal reference</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the user can proceed with the application upon allowing system cookies.</td>
+			<td>Verify that the user can edit an existing personal reference.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The Cookies Policy consent header/footer is displayed to the user.</td>
+			<td>A valid personal reference is already added.</td>
 		</tr>
 		<tr>
 			<th>Requirement</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
+			<td>REQ-UCC07-010 Add personal reference</td>
 		</tr>
 	</table>
 
@@ -104,33 +68,33 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>Click on 'Allow cookies' option.</td>
-			<td>The user can proceed with the current application.</td>
+			<td>Edit the existing personal reference to 'NewRef123-XYZ'.</td>
+			<td>The personal reference is updated successfully, and the system displays it in edit mode.</td>
 		</tr>
 	</table>
 
-	<h3>Test Case TC05_Negative_CookiesPolicyRejection</h3>
+	<h3>Test Case TC04</h3>
 
 	<table>
 		<tr>
 			<th>Test Case</th>
-			<td>TC05_Negative_CookiesPolicyRejection</td>
+			<td>TC04</td>
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>Rejection of Cookies Policy</td>
+			<td>Remove personal reference</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the user cannot proceed with the application if the system cookies are not allowed.</td>
+			<td>Verify that the user can remove an existing personal reference.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The Cookies Policy consent header/footer is displayed to the user.</td>
+			<td>A valid personal reference is already added.</td>
 		</tr>
 		<tr>
 			<th>Requirement</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
+			<td>REQ-UCC07-010 Add personal reference</td>
 		</tr>
 	</table>
 
@@ -140,8 +104,8 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>Attempt to proceed without clicking on 'Allow cookies' option.</td>
-			<td>The user cannot proceed with the current application and remains on the initial step of the application.</td>
+			<td>Remove the existing personal reference.</td>
+			<td>The personal reference is removed successfully, and the field is cleared.</td>
 		</tr>
 	</table>
 </div>

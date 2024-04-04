@@ -73,7 +73,7 @@ function getTestCasesByFile() {
 function uploadFile() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
-    fileInput.accept = '.docx, .txt'; // Accepts both DOCX and text files
+    //fileInput.accept = '.docx, .txt'; // Accepts both DOCX and text files
     fileInput.onchange = handleFileUpload;
     fileInput.click();
 }
