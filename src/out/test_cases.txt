@@ -1,27 +1,27 @@
 <div>
 	<h2>Test cases for user story USER STORY A:</h2>
 
-	<h3>Test Case Positive - Privacy Policy Acceptance - TC001</h3>
+	<h3>Test Case TC01</h3>
 
 	<table>
 		<tr>
 			<th>Test Case</th>
-			<td>Privacy Policy Acceptance</td>
+			<td>TC01</td>
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>User accepts the Privacy Policy</td>
+			<td>Privacy Policy Acceptance Flow</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Test the successful acceptance of the Privacy Policy by the user.</td>
+			<td>Verify that the system correctly records user consent for the Privacy Policy upon acceptance and allows the user to proceed with the application.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form and the Privacy Policy modal is displayed.</td>
+			<td>User has accessed an FO form.</td>
 		</tr>
 		<tr>
-			<th>Requirements</th>
+			<th>Requirement</th>
 			<td>REQ-UCC06-010 Privacy policy consent</td>
 		</tr>
 	</table>
@@ -32,32 +32,38 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>User clicks on 'Accept and Close' button on the Privacy Policy modal.</td>
-			<td>The modal closes, the user's consent is recorded with a timestamp, and the user can proceed with the application.</td>
+			<td>Start or resume application</td>
+			<td>Privacy Policy modal is displayed</td>
+		</tr>
+		<tr>
+			<td>Click on 'Accept and Close' button</td>
+			<td>Modal closes, consent is recorded with timestamp, and user proceeds with the application</td>
 		</tr>
 	</table>
+</div>
 
-	<h3>Test Case Negative - Privacy Policy Rejection - TC002</h3>
+<div>
+	<h3>Test Case TC02</h3>
 
 	<table>
 		<tr>
 			<th>Test Case</th>
-			<td>Privacy Policy Rejection</td>
+			<td>TC02</td>
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>User does not accept the Privacy Policy</td>
+			<td>Privacy Policy Rejection Flow</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Test the behavior when the user does not accept the Privacy Policy.</td>
+			<td>Verify that the system does not allow the user to proceed with the application if the Privacy Policy is rejected.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form and the Privacy Policy modal is displayed.</td>
+			<td>User has accessed an FO form and the Privacy Policy modal is displayed.</td>
 		</tr>
 		<tr>
-			<th>Requirements</th>
+			<th>Requirement</th>
 			<td>REQ-UCC06-010 Privacy policy consent</td>
 		</tr>
 	</table>
@@ -68,80 +74,8 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>User closes the Privacy Policy modal without accepting.</td>
-			<td>The user remains on the initial step of the application and cannot proceed.</td>
-		</tr>
-	</table>
-
-	<h3>Test Case Positive - Cookies Policy Acceptance - TC003</h3>
-
-	<table>
-		<tr>
-			<th>Test Case</th>
-			<td>Cookies Policy Acceptance</td>
-		</tr>
-		<tr>
-			<th>Title</th>
-			<td>User accepts the Cookies Policy</td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td>Test the successful acceptance of the Cookies Policy by the user.</td>
-		</tr>
-		<tr>
-			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form and the Cookies Policy overlay is displayed.</td>
-		</tr>
-		<tr>
-			<th>Requirements</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
-		</tr>
-	</table>
-
-	<table>
-		<tr>
-			<th>Action</th>
-			<th>Expected Result</th>
-		</tr>
-		<tr>
-			<td>User clicks on 'Allow cookies' option.</td>
-			<td>The overlay closes, and the user can proceed with the application.</td>
-		</tr>
-	</table>
-
-	<h3>Test Case Negative - Cookies Policy Rejection - TC004</h3>
-
-	<table>
-		<tr>
-			<th>Test Case</th>
-			<td>Cookies Policy Rejection</td>
-		</tr>
-		<tr>
-			<th>Title</th>
-			<td>User does not accept the Cookies Policy</td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td>Test the behavior when the user does not accept the Cookies Policy.</td>
-		</tr>
-		<tr>
-			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form and the Cookies Policy overlay is displayed.</td>
-		</tr>
-		<tr>
-			<th>Requirements</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
-		</tr>
-	</table>
-
-	<table>
-		<tr>
-			<th>Action</th>
-			<th>Expected Result</th>
-		</tr>
-		<tr>
-			<td>User attempts to close the Cookies Policy overlay without accepting.</td>
-			<td>The overlay remains, and the user cannot proceed with the application.</td>
+			<td>Attempt to close the Privacy Policy modal without accepting</td>
+			<td>The system prevents closing the modal and user remains on the initial step of the application.</td>
 		</tr>
 	</table>
 </div>

@@ -2,8 +2,7 @@ Amend the previous generated test cases based on a user input.
 Do not generate anything else other than html.
 The output is a <div> element with <table> elements inside.
 Fill [STORY_NAME] with the name of the user story.
-Fill [TEST_CASE_NAME] with the name of the test case.
-Fill [TEST_CODE_ID] with the id of the test case.
+Fill [TEST_CASE_NAME] with the name of the test case as a unique identifier.
 Fill [PRE-CONDITIONS] with single or multiple pre-conditions of the test case.
 Fill [REQUIREMENTS] with single or multiple rows containing the requirements of the test case.
 Fill [ACTION] with single or multiple rows containing the actions to be performed.
@@ -13,7 +12,7 @@ The output should comply strictly with the following format specifications:
 <div>
 	<h2>Test cases for user story [STORY_NAME]:</h2> <!-- put story name in placeholder -->
 
-	<h3>Test Case [TEST_CASE_NAME] - [TEST_CODE_ID]</h3>
+	<h3>Test Case [TEST_CASE_NAME]</h3>
 
 	<table>
 		<tr>

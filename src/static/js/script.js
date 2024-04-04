@@ -87,8 +87,8 @@ function handleFileUpload(event) {
 }
 
 // Handles submit story data fetch
-async function fetchTestCases(story) {
-	story = {'text': story};
+async function fetchTestCases(story, automaticManual, testType) {
+	story = {'text': story, 'automaticManual': automaticManual, 'testType': testType};
     try {
 		console.log('Story:', story);
 		console.log('Fetching data...')
@@ -133,6 +133,8 @@ async function amendTests() {
 		fetchAmendTests(amendText),
 		loadingScreen()
 	]);
+
+	console.log(amendTestsResult);
 	
 	if (amendTestsResult == null) {
 		alert("Tests are invalid");
@@ -224,28 +226,48 @@ async function loadingScreen() {
 
 // Handles submit story button
 async function submitStory() {
-	var inputText = document.getElementById("textInput").value;
-	var displayText = document.getElementById("displayText");
+	let inputText = document.getElementById("textInput").value;
+	let displayText = document.getElementById("displayText");
+	const automaticManualForm = document.getElementById('automaticManualForm');
+	const automaticManual = automaticManualForm.querySelector('input[name="automaticManual"]:checked').value;
+	const testTypeForm = document.getElementById('testTypeForm');
+	const testType = testTypeForm.querySelector('input[name="testType"]:checked').value;
 
-	//console.log(inputText);
+	console.log(automaticManual);
+	console.log(testType);
+
+	if (inputText == "") {
+		alert("Please enter text to generate tests");
+		return;
+	}
+
 	fetch_data_flag = false;
 	const [story, loadingScreenResult] = await Promise.all([
-        fetchTestCases(inputText),
+        fetchTestCases(inputText, automaticManual, testType),
         loadingScreen()
     ]);
 
 	if (story == null) {
 		alert("Story is invalid");
 	} else {
-		// Remove <head>, <body> and <html> tags
 		console.log(story);
 		displayText.innerHTML = story;
 	}
+}
+
+// Handles reset history button
+async function resetHistory() {
+	const data = await fetchClearMessages();
+	if (data == null) {
+		alert("Failed to clear history");
+	} else {
+		console.log(data);
+	}
+	// Clear display text
+	document.getElementById("displayText").innerHTML = "";
 }
 
 function textAreaAdjust(element) {
 	element.style.height = "1px";
 	element.style.height = (25+element.scrollHeight)+"px";
 }
-
-

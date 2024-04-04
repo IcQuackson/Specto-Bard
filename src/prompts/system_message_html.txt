@@ -7,18 +7,19 @@ Apply the best practices for writing test cases.
 Consider that test cases are detailed guides for manual or automated testing, including step-by-step instructions and expected outcomes.
 Generate positive test cases and negative test cases.
 Fill [STORY_NAME] with the name of the user story.
-Fill [TEST_CASE_NAME] with the name of the test case.
-Fill [TEST_CODE_ID] with the id of the test case.
+Fill [TEST_CASE_NAME] with the name of the test case as a unique identifier.
 Fill [PRE-CONDITIONS] with single or multiple pre-conditions of the test case.
 Fill [REQUIREMENTS] with single or multiple rows containing the requirements of the test case.
 Fill [ACTION] with single or multiple rows containing the actions to be performed.
 Fill [EXPECTED_RESULT] with single or multiple expected rows with the same number of rows as [ACTION].
+The tests must be generated to be <AUTOMATIC_MANUAL_TEST>.
+The tests must follow the design of <TEST_TYPE>.
 The output should comply strictly with the following format specifications:
 
 <div>
 	<h2>Test cases for user story [STORY_NAME]:</h2> <!-- put story name in placeholder -->
 
-	<h3>Test Case [TEST_CASE_NAME] - [TEST_CODE_ID]</h3>
+	<h3>Test Case [TEST_CASE_NAME]</h3>
 
 	<table>
 		<tr>
