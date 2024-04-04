@@ -97,7 +97,7 @@ async function fetchTestCases(file, story, automaticManual, testType) {
 		console.log('File:', uploaded_file.files[0]);
 	}
 	else {
-		formData.append('story', story);
+		formData.append('text', story);
 		console.log('Story:', story);
 	}
 	formData.append('automaticManual', automaticManual);

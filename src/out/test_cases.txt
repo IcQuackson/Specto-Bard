@@ -1,5 +1,5 @@
 <div>
-	<h2>Test cases for user story USER STORY A:</h2>
+	<h2>Test cases for user story USER STORY C:</h2>
 
 	<h3>Test Case TC01</h3>
 
@@ -10,19 +10,19 @@
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>User Accepts Privacy Policy</td>
+			<td>Add Personal Reference</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the user can proceed with the application after accepting the Privacy Policy.</td>
+			<td>Verify that the system allows adding a personal reference to the form.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form.</td>
+			<td>User has accessed an FO form.</td>
 		</tr>
 		<tr>
 			<th>Requirements</th>
-			<td>REQ-UCC06-010 Privacy policy consent</td>
+			<td>REQ-UCC07-010</td>
 		</tr>
 	</table>
 
@@ -32,8 +32,8 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>User clicks on 'Accept and Close' button in Privacy Policy modal.</td>
-			<td>The Privacy Policy modal closes, and the user can proceed with the application.</td>
+			<td>Enter valid personal reference information.</td>
+			<td>System saves the personal reference on the current form.</td>
 		</tr>
 	</table>
 
@@ -46,19 +46,19 @@
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>User Does Not Accept Privacy Policy</td>
+			<td>Personal Reference Validation</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the user cannot proceed with the application if the Privacy Policy is not accepted.</td>
+			<td>Verify that the system validates the personal reference input according to the rules.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form.</td>
+			<td>User has accessed an FO form.</td>
 		</tr>
 		<tr>
 			<th>Requirements</th>
-			<td>REQ-UCC06-010 Privacy policy consent</td>
+			<td>REQ-UCC07-010</td>
 		</tr>
 	</table>
 
@@ -68,8 +68,8 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>User attempts to proceed without clicking 'Accept and Close' in Privacy Policy modal.</td>
-			<td>User remains on the initial step of the application, unable to proceed.</td>
+			<td>Enter a personal reference using invalid characters.</td>
+			<td>System displays tooltip UCC07_MSG_01 indicating valid characters.</td>
 		</tr>
 	</table>
 
@@ -82,19 +82,19 @@
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>User Accepts Cookies Policy</td>
+			<td>Edit Personal Reference</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the user can proceed with the application after accepting the Cookies Policy.</td>
+			<td>Verify that the user can edit the personal reference.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form.</td>
+			<td>User has accessed an FO form and previously added a personal reference.</td>
 		</tr>
 		<tr>
 			<th>Requirements</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
+			<td>REQ-UCC07-010</td>
 		</tr>
 	</table>
 
@@ -104,8 +104,8 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>User clicks on 'Allow cookies' option in Cookies Policy overlay.</td>
-			<td>The Cookies Policy overlay closes, and the user can proceed with the application.</td>
+			<td>Edit the personal reference to a new valid value.</td>
+			<td>System updates and saves the new personal reference on the form.</td>
 		</tr>
 	</table>
 
@@ -118,19 +118,19 @@
 		</tr>
 		<tr>
 			<th>Title</th>
-			<td>User Does Not Accept Cookies Policy</td>
+			<td>Remove Personal Reference</td>
 		</tr>
 		<tr>
 			<th>Description</th>
-			<td>Verify that the user cannot proceed with the application if the Cookies Policy is not accepted.</td>
+			<td>Verify that the user can remove the personal reference.</td>
 		</tr>
 		<tr>
 			<th>Pre-Conditions</th>
-			<td>The user has accessed an FO form.</td>
+			<td>User has accessed an FO form and previously added a personal reference.</td>
 		</tr>
 		<tr>
 			<th>Requirements</th>
-			<td>REQ-UCC06-020 Cookies policy</td>
+			<td>REQ-UCC07-010</td>
 		</tr>
 	</table>
 
@@ -140,8 +140,44 @@
 			<th>Expected Result</th>
 		</tr>
 		<tr>
-			<td>User attempts to proceed without clicking 'Allow cookies' in Cookies Policy overlay.</td>
-			<td>User remains on the initial step of the application, unable to proceed.</td>
+			<td>Remove the existing personal reference.</td>
+			<td>System removes the personal reference from the form.</td>
+		</tr>
+	</table>
+
+	<h3>Test Case TC05</h3>
+
+	<table>
+		<tr>
+			<th>Test Case</th>
+			<td>TC05</td>
+		</tr>
+		<tr>
+			<th>Title</th>
+			<td>Import Personal Reference</td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td>Verify that the system imports and displays the personal reference when starting the application by importing a previous application.</td>
+		</tr>
+		<tr>
+			<th>Pre-Conditions</th>
+			<td>User selects to start the application by importing a previous application where the Personal Reference option was selected.</td>
+		</tr>
+		<tr>
+			<th>Requirements</th>
+			<td>REQ-UCC07-010</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<th>Action</th>
+			<th>Expected Result</th>
+		</tr>
+		<tr>
+			<td>Import a previous application with a personal reference.</td>
+			<td>System retrieves and displays the personal reference in edit mode on the form.</td>
 		</tr>
 	</table>
 </div>
