@@ -1,8 +1,10 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_file
+from docx import Document
+from docx.shared import Inches
 from flask import send_from_directory
 import os
-from docx import Document
 from openai import AzureOpenAI
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -190,6 +192,44 @@ def amend_test_cases():
 		file.write(test_cases)
 
 	return test_cases
+
+"""
+Endpoint to download the test cases in .txt format
+Method: GET
+Parameters:	None
+Returns:	test_cases.txt
+"""
+@app.route('/download_docx', methods=['GET'])
+def generate_docx():
+	# HTML content is retrieved from the file
+	html_content = ''
+	with open(OUTPUT_FOLDER + '/test_cases.txt', 'r') as file:
+		html_content = file.read()
+
+	# Create a new Document
+	doc = Document()
+
+	# Parse HTML content
+	soup = BeautifulSoup(html_content, 'html.parser')
+
+	# Stylize tables in the Document
+	for table in soup.find_all('table'):
+		doc.add_table(rows=len(table.find_all('tr')), cols=len(table.find_all(['th', 'td'])))
+		for i, row in enumerate(table.find_all('tr')):
+			for j, cell in enumerate(row.find_all(['th', 'td'])):
+				doc.tables[-1].cell(i, j).text = cell.get_text()
+				doc.tables[-1].cell(i, j).paragraphs[0].style = doc.styles['Normal']
+
+	# Save the Document
+	docx_file_path = 'output.docx'
+	doc.save(docx_file_path)
+
+	# Send the .docx file to the client
+	return send_file(
+		docx_file_path,
+		mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+		as_attachment=True
+	)
 
 """
 Endpoint to clear all messages

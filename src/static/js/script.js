@@ -1,6 +1,7 @@
 const GENERATE_TESTS_URL = '/generate_tests';
 const AMEND_TESTS_URL = '/amend_tests';
 const CLEAR_MESSAGES_URL = '/clear_messages';
+const DOWNLOAD_DOCX_URL = '/download_docx';
 var fetch_data_flag = false;
 var uploaded_file = null;
 
@@ -279,6 +280,34 @@ async function resetHistory() {
 		document.getElementById("textInput").disabled = false;
 		document.getElementById("textInput").value = "";
 	}
+}
+
+async function downloadDocx() {
+	const data = await fetch(DOWNLOAD_DOCX_URL)
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
+		}
+		return response.blob();
+	})
+	.then(blob => {
+		// Create a temporary link element
+		const url = window.URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.style.display = 'none';
+		a.href = url;
+		a.download = 'output.docx';
+		document.body.appendChild(a);
+
+		// Trigger the download
+		a.click();
+
+		// Clean up
+		window.URL.revokeObjectURL(url);
+	})
+	.catch(error => {
+		console.error('Error downloading file:', error);
+	});
 }
 
 function textAreaAdjust(element) {
