@@ -1,9 +1,16 @@
 
 <div align="center">
   <h1 style="text-align:center;">Specto-Bard</h1>
+  <div style="display: flex;">
+    <img src="https://img.shields.io/badge/Flask-000?logo=flask&logoColor=fff&style=flat-square">
+    <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
+  </div>
 </div>
 
 <div align="left">
+  <p>&nbsp;</p>
   <p style="text-align:center;">
     Specto-Bard is a full stack Web app utilizing AI to convert user stories into test cases. Enables iterative refinement of generated responses through user input.
   </p>
@@ -28,15 +35,6 @@
 - Positive and Negative Test Cases
 - Benchmark with References
 - Integration with Azure - OpenAI API
-
-## Tech Stack
-
-<div style="display: flex;">
-  <img src="https://img.shields.io/badge/Flask-000?logo=flask&logoColor=fff&style=flat-square">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
-</div>
 
 ## Features
 
